@@ -8,5 +8,6 @@ public class Hello {
 
     String alo (){
         System.out.println("d");
+        return "A";
     }
 }
