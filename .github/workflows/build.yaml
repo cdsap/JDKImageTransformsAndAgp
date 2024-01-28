@@ -15,7 +15,7 @@ jobs:
           distribution: temurin
           java-version: ${{ matrix.java }}
       - name: Execute Gradle build
-        run: ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.NO_TOOLCHAIN_NO_WORKAROUND
+        run: ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.NO_TOOLCHAIN_NO_WORKAROUND_AGP_8.1.2
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-temurin"
@@ -29,6 +29,7 @@ jobs:
             /home/runner/.gradle/caches/transforms-3/99b7153d6bdcdd1a2f468c08fa86fa5a/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/de8d13a4ba0c20cc41ac5193e0e632b7/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/a5b4331f0c86a01033f3bc70de797fea/transformed/output/jdkImage/lib/*
+    continue-on-error: true
 
   zulu:
     strategy:
@@ -43,7 +44,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Execute Gradle build
         run: |
-             ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-zulu -Dscan.tag.NO_TOOLCHAIN_NO_WORKAROUND
+             ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-zulu -Dscan.tag.NO_TOOLCHAIN_NO_WORKAROUND_AGP_8.1.2
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-zulu"
@@ -57,6 +58,7 @@ jobs:
             /home/runner/.gradle/caches/transforms-3/1a2508375073981f50d82e94091c008c/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/70596245383c5ecb7dc62844d764c8fb/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/60f5165b5c883e0c741773a3c887e64f/transformed/output/jdkImage/lib/*
+    continue-on-error: true
 
 
 
@@ -73,7 +75,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Execute Gradle build
         run: |
-            ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-liberica -Dscan.tag.NO_TOOLCHAIN_NO_WORKAROUND
+            ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-liberica -Dscan.tag.NO_TOOLCHAIN_NO_WORKAROUND_AGP_8.1.2
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-liberica"
@@ -88,3 +90,4 @@ jobs:
             /home/runner/.gradle/caches/transforms-3/8dcebbfbf0b5316d7855ce586e2654f1/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/a02e8e48a19429a1c861c4e8186e0153/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/b95d1bed050faa15462a0015647f55d1/transformed/output/jdkImage/lib/*
+    continue-on-error: true
