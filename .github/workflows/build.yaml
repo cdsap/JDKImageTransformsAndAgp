@@ -15,7 +15,7 @@ jobs:
           distribution: temurin
           java-version: ${{ matrix.java }}
       - name: Execute Gradle build
-        run: ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.NO_TOOLCHAIN_WORKAROUND_AGP_8.1.2
+        run: ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.NO_TOOLCHAIN_WORKAROUND_AGP_8.2.2
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-temurin"
@@ -44,7 +44,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Execute Gradle build
         run: |
-             ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-zulu -Dscan.tag.NO_TOOLCHAIN_WORKAROUND_AGP_8.1.2
+             ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-zulu -Dscan.tag.NO_TOOLCHAIN_WORKAROUND_AGP_8.2.2
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-zulu"
@@ -75,7 +75,7 @@ jobs:
           java-version: ${{ matrix.java }}
       - name: Execute Gradle build
         run: |
-            ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-liberica -Dscan.tag.NO_TOOLCHAIN_WORKAROUND_AGP_8.1.2
+            ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-liberica -Dscan.tag.NO_TOOLCHAIN_WORKAROUND_AGP_8.2.2
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-liberica"
