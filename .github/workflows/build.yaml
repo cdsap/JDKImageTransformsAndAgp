@@ -27,7 +27,7 @@ jobs:
             /home/runner/.gradle/caches/transforms-3/acbc84c1395e5a2f9a83686ad10dc90b/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/99b7153d6bdcdd1a2f468c08fa86fa5a/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/de8d13a4ba0c20cc41ac5193e0e632b7/transformed/output/jdkImage/lib/*
-            /home/runner/.gradle/caches/transforms-3/a5b4331f0c86a01033f3bc70de797fea/transformed/output/jdkImage/lib/*
+            /home/runner/.gradle/caches/transforms-3/df157351579a710139a861ad9f6b742e/transformed/output/jdkImage/lib/*
     continue-on-error: true
 
   zulu:
@@ -53,7 +53,7 @@ jobs:
           name: zulu-${{ matrix.java }}
           path: |
             /home/runner/.gradle/caches/transforms-3/df157351579a710139a861ad9f6b742e/transformed/output/jdkImage/lib/*
-            /home/runner/.gradle/caches/transforms-3/df157351579a710139a861ad9f6b742e/transformed/output/jdkImage/lib/*
+            /home/runner/.gradle/caches/transforms-3/acbc84c1395e5a2f9a83686ad10dc90b/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/1a2508375073981f50d82e94091c008c/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/70596245383c5ecb7dc62844d764c8fb/transformed/output/jdkImage/lib/*
             /home/runner/.gradle/caches/transforms-3/60f5165b5c883e0c741773a3c887e64f/transformed/output/jdkImage/lib/*
