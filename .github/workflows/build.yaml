@@ -24,7 +24,7 @@ jobs:
           echo $PATH
           echo $GRADLE_ZIP
           echo $LD_PRELOAD
-          ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.WORKAROUND_AGP_8.2.2_NEW
+          ./gradlew clean assembleRelease -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.WORKAROUND_AGP_8.2.2_NEW
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
           AGENT_JAVA_VERSION: "${{ matrix.java }}-temurin"
