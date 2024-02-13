@@ -46,7 +46,7 @@ jobs:
       - name: Run a command inside the Docker container
         run: |
           echo $HOME
-          echo $ENV LD_PRELOAD
+          echo $LD_PRELOAD
           ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.WORKAROUND_AGP_8.2.2_NEW
         env:
           GRADLE_ENTERPRISE_ACCESS_KEY: ${{ secrets.GE_API_KEY }}
