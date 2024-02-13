@@ -5,38 +5,11 @@ on:
     branches: [ testing_jemalloc]
 
 jobs:
-  setup-build-environment:
-    runs-on: ubuntu-latest
-    outputs:
-        image: ${{ steps.image-name.outputs.image }}
-    steps:
-      # Setup gcloud CLI
-      - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v0.2.0
-        with:
-          service_account_key: ${{ secrets.GCR_SA_KEY }}
-          project_id: cache-node
-
-      # Configure Docker to authenticate via gcloud CLI
-      - name: Configure Docker to use the gcloud command-line tool as a credential helper
-        run: |
-          gcloud auth configure-docker
-
-      # Explicitly pull the Docker image
-      - name: Pull Docker image from GCR
-        run: |
-          docker pull gcr.io/cache-node/android-builder-jemalloc:0.2
-
-      # Dynamically set the image name to the job's context to use in subsequent jobs
-      - name: Set image name
-        id: image-name
-        run: echo "image=gcr.io/cache-node/android-builder-jemalloc:0.2" >> $GITHUB_OUTPUT
-
   build:
     needs: setup-build-environment
     runs-on: ubuntu-latest
     container:
-      image: ${{ needs.setup-build-environment.outputs.image }}
+      image: cdsap/android-builder-jemalloc:0.2
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v3
