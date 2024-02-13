@@ -45,6 +45,7 @@ jobs:
 
       - name: Run a command inside the Docker container
         run: |
+          echo ${{ needs.setup-build-environment.outputs.image }}
           echo $HOME
           echo $_GRADLE_VERSION
           echo $PATH
