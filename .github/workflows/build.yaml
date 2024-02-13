@@ -7,6 +7,8 @@ on:
 jobs:
   setup-build-environment:
     runs-on: ubuntu-latest
+    outputs:
+        image: ${{ steps.image-name.outputs.image }}
     steps:
       # Setup gcloud CLI
       - name: Set up Google Cloud SDK
@@ -28,7 +30,7 @@ jobs:
       # Dynamically set the image name to the job's context to use in subsequent jobs
       - name: Set image name
         id: image-name
-        run: echo "::set-output name=image::gcr.io/cache-node/android-builder-jemalloc:0.2"
+        run: echo "image=gcr.io/cache-node/android-builder-jemalloc:0.2" >> $GITHUB_OUTPUT
 
   build:
     needs: setup-build-environment
