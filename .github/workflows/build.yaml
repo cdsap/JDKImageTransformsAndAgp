@@ -49,6 +49,8 @@ jobs:
           echo $_GRADLE_VERSION
           echo $PATH
           echo $GRADLE_ZIP
+          cd /usr/lib
+          ls -la
 
           echo $LD_PRELOAD
           ./gradlew clean assembleDebug -Dscan.tag.H${{ matrix.java }}-temurin -Dscan.tag.WORKAROUND_AGP_8.2.2_NEW
