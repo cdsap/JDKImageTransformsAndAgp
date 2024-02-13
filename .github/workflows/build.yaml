@@ -10,7 +10,7 @@ jobs:
     steps:
       # Setup gcloud CLI
       - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud
+        uses: google-github-actions/setup-gcloud@v0.2.0
         with:
           service_account_key: ${{ secrets.GCR_SA_KEY }}
           project_id: cache-node
